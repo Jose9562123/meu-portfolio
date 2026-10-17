@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Ferreira da Silva | Analista de Sistemas Júnior</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navegação / Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="logo">
+        <!-- Logo SVG Otimizada com viewBox Justo -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="270 70 260 300" class="logo-svg">
+            <defs>
+            <linearGradient id="cyberGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38FBDB" />
+                <stop offset="100%" stop-color="#8E52F5" />
+            </linearGradient>
+            </defs>
+            <polygon points="400,90 512,155 512,285 400,350 288,285 288,155" fill="none" stroke="url(#cyberGradNav)" stroke-width="20" stroke-linejoin="round" />
+            <path d="M 330,245 L 380,195 L 420,230 L 475,165" fill="none" stroke="url(#cyberGradNav)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+            <text x="400" y="275" font-family="monospace" font-size="90" font-weight="bold" fill="#38FBDB" text-anchor="middle">&lt;/&gt;</text>
+        </svg>
+        <span>JOSÉ F DA SILVA</span>
+        </a>
+
+      <!-- Botão Menu Mobile -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Início</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#resume">Aba Currículo</a></li>
+        <li><a href="#contact">Contato</a></li>
+        <li class="mobile-only-btn">
+          <a href="#contact" class="btn-primary">Solicitar Orçamento</a>
+        </li>
+      </ul>
+      <a href="#contact" class="btn-primary desktop-only-btn">Solicitar Orçamento</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="container hero">
+    <div class="hero-text">
+      <h1 class="hero-title">Transforme processos em <span>soluções digitais inteligentes</span></h1>
+      <p class="hero-subtitle">Análise de Sistemas, automação de rotinas fiscais/operacionais e desenvolvimento web sob medida para impulsionar o seu negócio.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary">Ver Serviços</a>
+        <a href="#contact" class="btn-secondary">Falar Comigo</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3 class="hero-card-title">Engenharia de Soluções & TI</h3>
+      <p>Especializado no mapeamento de processos, tratamento de documentos fiscais e desenvolvimento de sistemas integrados.</p>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="services" class="container services">
+    <h2 class="section-title">Prestação de Serviços</h2>
+    <p class="section-subtitle">Soluções tecnológicas para otimização de empresas e sistemas</p>
+
+    <div class="grid-services">
+      <div class="card">
+        <div class="card-icon">&lt;/&gt;</div>
+        <h3>Desenvolvimento Web</h3>
+        <p>Criação de portais, dashboards e sistemas interativos utilizando HTML5, CSS3 e JavaScript.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Suporte TI & Cybersecurity</h3>
+        <p>Administração de ambientes Windows e Linux (Kali/Ubuntu), testes de segurança e diagnóstico de infraestrutura de TI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard de Currículo -->
+  <section id="resume" class="container">
+    <div class="dashboard">
+      <h2 class="section-title section-title-left">Aba de Currículo Interativo</h2>
+      <div class="dashboard-grid">
+        
+        <!-- Perfil Lateral -->
+        <div class="profile-card">
+          <div class="profile-avatar">JS</div>
+          <h3>José Ferreira da Silva</h3>
+          <p class="profile-role">Analista de Sistemas Júnior</p>
+          <span class="badge">Disponível para Projetos</span>
+          <p class="profile-location">Atuação em Maceió/AL com disponibilidade para atendimento e prestação de serviços remotos.</p>
+        </div>
+
+        <!-- Conteúdo do Currículo -->
+        <div class="resume-content">
+          <h3 class="resume-section-title">Formação Acadêmica & Especializações</h3>
+          
+          <div class="card card-resume">
+            <div class="card-header-flex">
+              <h4>Análise e Desenvolvimento de Sistemas</h4>
+              <div class="tags-group">
+                <span class="tag tag-gold">Concluído</span>
+                <span class="tag tag-primary">Centro Universitário (UMJ)</span>
+              </div>
+            </div>
+            <p class="card-desc">Grau Superior Tecnológico</p>
+          </div>
+
+          <div class="card card-resume">
+            <div class="card-header-flex">
+              <h4>Formação Cybersecurity Specialist</h4>
+              <div class="tags-group">
+                <span class="tag tag-warning">Cursando</span>
+                <span class="tag tag-primary">Digital Innovation One (DIO)</span>
+              </div>
+            </div>
+            <p class="card-desc">Aprofundamento em segurança de redes, análise de vulnerabilidades e sistemas Linux.</p>
+          </div>
+
+          <div class="card card-resume">
+            <div class="card-header-flex">
+              <h4>Formação Linux Fundamentals</h4>
+              <div class="tags-group">
+                <span class="tag tag-warning">Cursando</span>
+                <span class="tag tag-primary">Digital Innovation One (DIO)</span>
+              </div>
+            </div>
+            <p class="card-desc">Domínio prático do terminal Linux, gestão de arquivos e diretórios, configuração de permissões de segurança e administração básica de servidores.</p>
+          </div>
+
+          <h3 class="resume-section-title">Stack de Tecnologias</h3>
+          <div class="card">
+            <p class="stack-list">
+              <strong>Desenvolvimento:</strong> HTML5, CSS3, JavaScript.<br>
+              <strong>Sistemas & Redes:</strong> Linux (Kali Linux, Ubuntu), Windows Sysinternals.<br>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="container services">
+    <h2 class="section-title">Entre em Contato</h2>
+    <p class="section-subtitle">Envie uma mensagem para iniciarmos uma parceria ou contratação</p>
+
+    <div class="contact-wrapper">
+      <form id="contact-form" class="card">
+        <div class="form-group">
+          <label for="form-name">Nome</label>
+          <input type="text" id="form-name" required placeholder="Seu nome completo">
+        </div>
+        <div class="form-group">
+          <label for="form-email">E-mail</label>
+          <input type="email" id="form-email" required placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="form-group">
+          <label for="form-message">Mensagem</label>
+          <textarea rows="4" id="form-message" required placeholder="Como posso ajudar o seu negócio?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-block">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
