@@ -4,49 +4,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>José Ferreira da Silva | Analista de Sistemas Júnior</title>
-  <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       ESTILOS INTEGRADOS (CYBER ANALYST)
+       ========================================================================== */
+    :root {
+      --bg-main: #0C1E3E;
+      --bg-card: #122C5A;
+      --bg-deep: #073763;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B5B5BE;
+      --text-muted: #6FA8DC;
+      --primary: #38FBDB;
+      --accent-purple: #8E52F5;
+      --accent-gold: #FFE599;
+      --border-color: rgba(56, 251, 219, 0.2);
+      --shadow-sm: 0 2px 6px rgba(25, 37, 45, 0.4);
+      --shadow-md: 0 4px 16px rgba(142, 82, 245, 0.15);
+      --shadow-lg: 0 10px 30px rgba(56, 251, 219, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-sans); background-color: var(--bg-main); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .header { position: sticky; top: 0; background-color: rgba(12, 30, 62, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 1000; }
+    .nav { display: flex; justify-content: space-between; align-items: center; min-height: 70px; }
+    .logo { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-svg { width: 48px; height: 48px; flex-shrink: 0; }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+    .btn-primary { display: inline-block; background: linear-gradient(135deg, var(--accent-purple), var(--primary)); color: #0C1E3E; font-weight: 700; padding: 10px 20px; border-radius: var(--radius-sm); text-decoration: none; border: none; cursor: pointer; box-shadow: 0 4px 14px rgba(56, 251, 219, 0.3); transition: transform 0.2s ease; text-align: center; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { display: inline-block; background: transparent; color: var(--primary); font-weight: 600; padding: 10px 20px; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--primary); }
+    .btn-block { width: 100%; }
+
+    /* Hero */
+    .hero { padding: 60px 20px 40px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+    .hero-title { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; margin-bottom: 18px; }
+    .hero-title span { background: linear-gradient(135deg, var(--primary), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-subtitle { color: var(--text-secondary); font-size: clamp(1rem, 2vw, 1.15rem); margin-bottom: 24px; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg); }
+    .hero-card-title { color: var(--primary); margin-bottom: 12px; font-size: 1.25rem; }
+
+    /* Serviços */
+    .services { padding: 60px 20px; }
+    .section-title { text-align: center; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--text-primary); margin-bottom: 8px; }
+    .section-title-left { text-align: left; }
+    .section-subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 36px; font-size: 0.95rem; }
+    .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .card { background: var(--bg-card); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); transition: transform 0.2s ease, border-color 0.2s ease; }
+    .card:hover { transform: translateY(-4px); border-color: var(--primary); }
+    .card-icon { width: 48px; height: 48px; background-color: rgba(56, 251, 219, 0.1); color: var(--primary); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 1.2rem; font-weight: bold; }
+
+    /* Dashboard Currículo */
+    .dashboard { padding: 36px 28px; background-color: var(--bg-card); border-radius: var(--radius-lg); margin: 30px 0; border: 1px solid var(--border-color); box-shadow: var(--shadow-md); }
+    .dashboard-grid { display: grid; grid-template-columns: 260px 1fr; gap: 28px; margin-top: 24px; }
+    .profile-card { background-color: var(--bg-main); padding: 24px; border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border-color); height: fit-content; }
+    .profile-avatar { width: 76px; height: 76px; border-radius: 50%; background: var(--bg-deep); border: 2px solid var(--primary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: bold; margin: 0 auto 12px; }
+    .profile-role { color: var(--text-muted); font-size: 0.88rem; margin-top: 4px; }
+    .badge { display: inline-block; background-color: rgba(255, 229, 153, 0.15); color: var(--accent-gold); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-top: 10px; border: 1px solid rgba(255, 229, 153, 0.3); }
+    .profile-location { margin-top: 14px; font-size: 0.85rem; color: var(--text-secondary); }
+    .resume-section-title { margin-bottom: 14px; color: var(--primary); font-size: 1.2rem; }
+    .card-resume { margin-bottom: 16px; }
+    .card-header-flex { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+    .tags-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag { font-size: 0.8rem; font-weight: 600; padding: 3px 10px; border-radius: 12px; }
+    .tag-gold { color: var(--accent-gold); background: rgba(255, 229, 153, 0.1); border: 1px solid rgba(255, 229, 153, 0.3); }
+    .tag-primary { color: var(--primary); background: rgba(56, 251, 219, 0.1); border: 1px solid rgba(56, 251, 219, 0.2); }
+    .card-desc { font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; }
+    .stack-list { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
+
+    /* Contacto */
+    .contact-wrapper { max-width: 580px; margin: 0 auto; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 0.9rem; }
+    input, textarea { width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); background-color: var(--bg-main); color: var(--text-primary); font-family: inherit; font-size: 0.95rem; }
+    input:focus, textarea:focus { outline: none; border-color: var(--primary); }
+
+    @media (max-width: 992px) {
+      .hero { grid-template-columns: 1fr; }
+      .dashboard-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navegação / Header -->
+  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a href="#home" class="logo">
-        <!-- Logo SVG Otimizada com viewBox Justo -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="270 70 260 300" class="logo-svg">
-            <defs>
+          <defs>
             <linearGradient id="cyberGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#38FBDB" />
-                <stop offset="100%" stop-color="#8E52F5" />
+              <stop offset="0%" stop-color="#38FBDB" />
+              <stop offset="100%" stop-color="#8E52F5" />
             </linearGradient>
-            </defs>
-            <polygon points="400,90 512,155 512,285 400,350 288,285 288,155" fill="none" stroke="url(#cyberGradNav)" stroke-width="20" stroke-linejoin="round" />
-            <path d="M 330,245 L 380,195 L 420,230 L 475,165" fill="none" stroke="url(#cyberGradNav)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
-            <text x="400" y="275" font-family="monospace" font-size="90" font-weight="bold" fill="#38FBDB" text-anchor="middle">&lt;/&gt;</text>
+          </defs>
+          <polygon points="400,90 512,155 512,285 400,350 288,285 288,155" fill="none" stroke="url(#cyberGradNav)" stroke-width="20" stroke-linejoin="round" />
+          <path d="M 330,245 L 380,195 L 420,230 L 475,165" fill="none" stroke="url(#cyberGradNav)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="400" y="275" font-family="monospace" font-size="90" font-weight="bold" fill="#38FBDB" text-anchor="middle">&lt;/&gt;</text>
         </svg>
         <span>JOSÉ F DA SILVA</span>
-        </a>
-
-      <!-- Botão Menu Mobile -->
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <ul class="nav-links" id="nav-links">
+      </a>
+      <ul class="nav-links">
         <li><a href="#home" class="active">Início</a></li>
         <li><a href="#services">Serviços</a></li>
         <li><a href="#resume">Aba Currículo</a></li>
-        <li><a href="#contact">Contato</a></li>
-        <li class="mobile-only-btn">
-          <a href="#contact" class="btn-primary">Solicitar Orçamento</a>
-        </li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
-      <a href="#contact" class="btn-primary desktop-only-btn">Solicitar Orçamento</a>
+      <a href="#contact" class="btn-primary">Solicitar Orçamento</a>
     </div>
   </header>
 
@@ -70,7 +150,6 @@
   <section id="services" class="container services">
     <h2 class="section-title">Prestação de Serviços</h2>
     <p class="section-subtitle">Soluções tecnológicas para otimização de empresas e sistemas</p>
-
     <div class="grid-services">
       <div class="card">
         <div class="card-icon">&lt;/&gt;</div>
@@ -85,13 +164,11 @@
     </div>
   </section>
 
-  <!-- Dashboard de Currículo -->
+  <!-- Currículo Dashboard -->
   <section id="resume" class="container">
     <div class="dashboard">
       <h2 class="section-title section-title-left">Aba de Currículo Interativo</h2>
       <div class="dashboard-grid">
-        
-        <!-- Perfil Lateral -->
         <div class="profile-card">
           <div class="profile-avatar">JS</div>
           <h3>José Ferreira da Silva</h3>
@@ -99,11 +176,8 @@
           <span class="badge">Disponível para Projetos</span>
           <p class="profile-location">Atuação em Maceió/AL com disponibilidade para atendimento e prestação de serviços remotos.</p>
         </div>
-
-        <!-- Conteúdo do Currículo -->
         <div class="resume-content">
-          <h3 class="resume-section-title">Formação Acadêmica & Especializações</h3>
-          
+          <h3 class="resume-section-title">Formação Académica & Especializações</h3>
           <div class="card card-resume">
             <div class="card-header-flex">
               <h4>Análise e Desenvolvimento de Sistemas</h4>
@@ -114,59 +188,55 @@
             </div>
             <p class="card-desc">Grau Superior Tecnológico</p>
           </div>
-
           <div class="card card-resume">
             <div class="card-header-flex">
               <h4>Formação Cybersecurity Specialist</h4>
               <div class="tags-group">
-                <span class="tag tag-warning">Cursando</span>
+                <span class="tag tag-gold">Cursando</span>
                 <span class="tag tag-primary">Digital Innovation One (DIO)</span>
               </div>
             </div>
             <p class="card-desc">Aprofundamento em segurança de redes, análise de vulnerabilidades e sistemas Linux.</p>
           </div>
-
           <div class="card card-resume">
             <div class="card-header-flex">
               <h4>Formação Linux Fundamentals</h4>
               <div class="tags-group">
-                <span class="tag tag-warning">Cursando</span>
+                <span class="tag tag-gold">Cursando</span>
                 <span class="tag tag-primary">Digital Innovation One (DIO)</span>
               </div>
             </div>
             <p class="card-desc">Domínio prático do terminal Linux, gestão de arquivos e diretórios, configuração de permissões de segurança e administração básica de servidores.</p>
           </div>
-
           <h3 class="resume-section-title">Stack de Tecnologias</h3>
           <div class="card">
             <p class="stack-list">
-              <strong>Desenvolvimento:</strong> HTML5, CSS3, JavaScript.<br>
-              <strong>Sistemas & Redes:</strong> Linux (Kali Linux, Ubuntu), Windows Sysinternals.<br>
+              <strong>Desenvolvimento:</strong> HTML5, CSS3, JavaScript (ES6+), Bootstrap 5, Firebase.<br>
+              <strong>Sistemas & Redes:</strong> Linux (Kali Linux, Ubuntu), Windows Sysinternals, PowerShell, Robocopy.<br>
+              <strong>Negócios & Logística:</strong> Processamento de MDF-e, CT-e, XMLs fiscais e rotinas de transporte/frete.
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Contato -->
+  <!-- Contacto -->
   <section id="contact" class="container services">
-    <h2 class="section-title">Entre em Contato</h2>
+    <h2 class="section-title">Entre em Contacto</h2>
     <p class="section-subtitle">Envie uma mensagem para iniciarmos uma parceria ou contratação</p>
-
     <div class="contact-wrapper">
       <form id="contact-form" class="card">
         <div class="form-group">
-          <label for="form-name">Nome</label>
+          <label>Nome</label>
           <input type="text" id="form-name" required placeholder="Seu nome completo">
         </div>
         <div class="form-group">
-          <label for="form-email">E-mail</label>
+          <label>E-mail</label>
           <input type="email" id="form-email" required placeholder="seuemail@exemplo.com">
         </div>
         <div class="form-group">
-          <label for="form-message">Mensagem</label>
+          <label>Mensagem</label>
           <textarea rows="4" id="form-message" required placeholder="Como posso ajudar o seu negócio?"></textarea>
         </div>
         <button type="submit" class="btn-primary btn-block">Enviar Mensagem</button>
@@ -174,6 +244,19 @@
     </div>
   </section>
 
-  <script src="js/main.js"></script>
+  <script>
+    // Script integrado para o formulário
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('form-name').value;
+        if (name) {
+          alert(`Obrigado, ${name}! Mensagem enviada com sucesso.`);
+          contactForm.reset();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
